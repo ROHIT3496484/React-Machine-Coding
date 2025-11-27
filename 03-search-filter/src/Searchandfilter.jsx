@@ -26,27 +26,32 @@ const Searchandfilter = () => {
     
 
   return (
-    <div>
-        <div><h1>Search and Filter</h1></div>
-      <input type="text" value={search}  onChange={(e)=>setSearch(e.target.value)}/>
+    <div className="search-filter-container">
+        <h1>Search and Filter</h1>
+      <div className="filter-controls">
+        <input 
+          type="text" 
+          placeholder="Search by product name..." 
+          value={search}  
+          onChange={(e)=>setSearch(e.target.value)}
+        />
 
-      <select  value={category} name="category" onChange={(e)=>setCategory(e.target.value)}>
-        <option value="All">All Categories</option>
-        <option value="Electronics">Electronics</option>
-        <option value="Clothing">Clothing</option>
-        <option value="Footwear">Footwear</option>
-        <option value="Kitchen">Kitchen</option>
-      </select>
-     <div> <h4>Ratings:</h4>
+        <select  value={category} name="category" onChange={(e)=>setCategory(e.target.value)}>
+          <option value="All">All Categories</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Footwear">Footwear</option>
+          <option value="Kitchen">Kitchen</option>
+        </select>
         <select value ={rating} onChange={(e)=> setRating(e.target.value)}>
-        <option value="All">All</option>
-        <option value="1" > 1 </option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-     </div>
+          <option value="All">All Ratings</option>
+          <option value="1">⭐ 1 Star</option>
+          <option value="2">⭐ 2 Stars</option>
+          <option value="3">⭐ 3 Stars</option>
+          <option value="4">⭐ 4 Stars</option>
+          <option value="5">⭐ 5 Stars</option>
+        </select>
+      </div>
       
       <div className="Tiles" >
         {

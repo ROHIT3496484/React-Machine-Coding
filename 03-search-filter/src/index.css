@@ -66,15 +66,128 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-.tile-item{
-  
-  height: 200px;
-  width: 150px;
-  border: 1px solid greenyellow;
-  border-radius: 5px;
-  margin: 20px;
-  padding: 20px;
+/* Search and Filter Styles */
+.search-filter-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
 }
-.Tiles{
+
+.search-filter-container h1 {
+  text-align: center;
+  color: #646cff;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+}
+
+/* Filter Controls */
+.filter-controls {
   display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  background: rgba(100, 108, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+input[type="text"],
+select {
+  padding: 10px 15px;
+  border: 2px solid #646cff;
+  border-radius: 6px;
+  font-size: 1em;
+  font-family: inherit;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: inherit;
+  transition: all 0.3s ease;
+  min-width: 150px;
+}
+
+input[type="text"]::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: #535bf2;
+  background-color: rgba(100, 108, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.2);
+}
+
+select {
+  cursor: pointer;
+}
+
+select option {
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+/* Product Tiles */
+.tile-item {
+  background: linear-gradient(135deg, rgba(100, 108, 255, 0.1), rgba(100, 108, 255, 0.05));
+  height: auto;
+  width: 200px;
+  border: 2px solid #646cff;
+  border-radius: 12px;
+  margin: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tile-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(100, 108, 255, 0.4);
+  border-color: #535bf2;
+  background: linear-gradient(135deg, rgba(100, 108, 255, 0.2), rgba(100, 108, 255, 0.1));
+}
+
+.tile-item strong {
+  font-size: 1.2em;
+  color: #646cff;
+  word-wrap: break-word;
+}
+
+.tile-item div {
+  font-size: 0.95em;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tile-item div:nth-child(2)::before {
+  content: "📦 ";
+}
+
+.tile-item div:nth-child(3)::before {
+  content: "💰 ";
+}
+
+.tile-item div:nth-child(4)::before {
+  content: "⭐ ";
+}
+
+/* Tiles Container */
+.Tiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  min-height: 300px;
+}
+
+.Tiles p {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #999;
+  font-size: 1.2em;
+  width: 100%;
 }
